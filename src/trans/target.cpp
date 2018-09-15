@@ -29,7 +29,7 @@ TargetArch ARCH_ARM32 = {
     { /*atomic(u8)=*/true, false, true, false,  true }
 };
 const TargetArch ARCH_MIPSEL64 = {
-    "mips",
+    "mips64",
     64, false,
     { /*atomic(u8)=*/true, true, true, true, true }
 };
