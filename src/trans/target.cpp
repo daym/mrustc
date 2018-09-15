@@ -28,6 +28,11 @@ TargetArch ARCH_ARM32 = {
     32, false,
     { /*atomic(u8)=*/true, false, true, false,  true }
 };
+const TargetArch ARCH_MIPSEL64 = {
+    "mips",
+    64, false,
+    { /*atomic(u8)=*/true, true, true, true, true }
+};
 TargetSpec  g_target;
 
 
@@ -64,6 +69,13 @@ namespace
             return TargetSpec {
                 "unix", "linux", "gnu", CodegenMode::Gnu11, "arm-elf-eabi",
                 ARCH_ARM32
+                };
+        }
+        else if(target_name == "mips64el-linux-gnu")
+        {
+            return TargetSpec {
+                "unix", "linux", "gnu", {CodegenMode::Gnu11, "mips64el-linux-gnu", BACKEND_C_OPTS_GNU},
+                ARCH_MIPSEL64
                 };
         }
         else if(target_name == "i586-windows-gnu")
