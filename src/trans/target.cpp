@@ -74,7 +74,7 @@ namespace
         else if(target_name == "mips64el-linux-gnu")
         {
             return TargetSpec {
-                "unix", "linux", "gnu", {CodegenMode::Gnu11, "mips64el-linux-gnu", BACKEND_C_OPTS_GNU},
+                "unix", "linux", "gnu", {CodegenMode::Gnu11, "mips64el-linux-gnuabi64", BACKEND_C_OPTS_GNU},
                 ARCH_MIPSEL64
                 };
         }
